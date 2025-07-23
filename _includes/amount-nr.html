@@ -1,14 +1,18 @@
 {%- assign amount = include.amount -%}
-{%- assign whole_part = amount | floor -%}
-{%- assign fractional_part = amount | minus: whole_part -%}
-{%- if fractional_part == 0 -%}
-  {{- whole_part -}}
-{%- elsif fractional_part == 0.25 -%}
-  {%- if whole_part > 0 -%}{{ whole_part }} {% endif %}¼
-{%- elsif fractional_part == 0.5 -%}
-  {%- if whole_part > 0 -%}{{ whole_part }} {% endif %}½
-{%- elsif fractional_part == 0.75 -%}
-  {%- if whole_part > 0 -%}{{ whole_part }} {% endif %}¾
+{%- if include.amountType == nil or include.amountType == 'absolute' -%}
+  {%- assign whole_part = amount | floor -%}
+  {%- assign fractional_part = amount | minus: whole_part -%}
+  {%- if fractional_part == 0 -%}
+    {{- whole_part -}}
+  {%- elsif fractional_part == 0.25 -%}
+    {%- if whole_part > 0 -%}{{ whole_part }} {% endif %}¼
+  {%- elsif fractional_part == 0.5 -%}
+    {%- if whole_part > 0 -%}{{ whole_part }} {% endif %}½
+  {%- elsif fractional_part == 0.75 -%}
+    {%- if whole_part > 0 -%}{{ whole_part }} {% endif %}¾
+  {%- else -%}
+    {{- amount -}}
+  {%- endif -%}
 {%- else -%}
-  {{- amount -}}
+  {{ amount }} {{ include.amountType }}
 {%- endif -%}

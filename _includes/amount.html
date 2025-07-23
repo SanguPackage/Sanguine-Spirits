@@ -2,8 +2,10 @@
 <span class="amount" data-amount="{{ amount }}">
   {%- if include.amountType == 'absolute' -%}
     {{ amount }}
-  {%- else -%}
+  {%- elsif include.amountType == nil -%}
     {%- assign metric = amount | times: 30 | floor -%}
     {%- include amount-nr.html amount=metric %} ml
+  {%- else -%}
+    {{ amount }} {{ include.amountType }}
   {%- endif -%}
 </span>

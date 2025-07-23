@@ -41,7 +41,7 @@
     <p class="card-text flex-grow-1">
       {%- for ingredient in cocktail.ingredients -%}
         {{ ingredient.name }}
-        {%- if ingredient.amount %} ({%- include amount-nr.html amount=ingredient.amount -%}){%- endif -%}
+        {%- if ingredient.amount %} ({%- include amount-nr.html amount=ingredient.amount amountType=ingredient.amountType -%}){%- endif -%}
         {% unless forloop.last %}, {% endunless %}
       {%- endfor -%}
     </p>

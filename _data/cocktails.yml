@@ -229,6 +229,35 @@
     - "Garnish with 1-3 raspberries."
   youtube:
 
+- name: Caipirinha
+  spirit: Cachaça
+  desc: >
+    Brazil's national cocktail — bold, rustic, and refreshingly simple.
+    Cachaça, lime, and sugar collide in a vibrant, muddled mix that's
+    zesty, earthy, and unapologetically alive.
+  ingredients:
+    - name: Cachaça
+      amount: 2
+      type: shaker
+    - name: Lime
+      amount: 1
+      amountType: absolute
+      type: shaker
+    - name: Sugar
+      amount: 2
+      amountType: tsp
+      type: shaker
+    - name: Lime Wheel
+      type: garnish
+  steps:
+    - "Cut the lime (see video) and put in the shaker."
+    - "Add the teaspoons sugar and muddle."
+    - "Add the cachaça and do a wet shake."
+    - "Pour everything in a glass."
+    - "Garnish with a lime wheel."
+  youtube: https://www.youtube.com/watch?v=YjMm98w10d0
+
+
 # - name:
 #   spirit:
 #   desc: >

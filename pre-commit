@@ -1,0 +1,13 @@
+#!/bin/sh
+
+echo "Generating cocktail pages..."
+ruby generate-cocktail-pages.rb
+
+if [ -n "$(git status --porcelain cocktails/)" ]; then
+  echo "New cocktail pages generated. Adding them to the commit..."
+  git add cocktails/
+else
+  echo "No new cocktail pages to add."
+fi
+
+echo "Pre-commit hook completed."

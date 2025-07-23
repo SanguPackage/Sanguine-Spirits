@@ -127,6 +127,7 @@
     - name: Triple Sec
       amount: 0.5
       type: shaker
+      spirit: true
     - name: Lime Juice
       amount: 0.5
       type: shaker
@@ -183,6 +184,7 @@
     - name: Champagne
       amount: 3
       type: top
+      spirit: true
     - name: Lemon Twist
       type: garnish
   steps:

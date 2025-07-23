@@ -140,6 +140,93 @@
   youtube:
 
 
+- name: Gimlet
+  spirit: Gin
+  desc: >
+    A minimalist cocktail of gin and lime — sharp, crisp, and impeccably balanced.
+    It's the embodiment of simplicity with an edge: cool, clean, and quietly intense.
+  ingredients:
+    - name: Gin
+      amount: 2
+      type: shaker
+    - name: Lime Juice
+      amount: 0.5
+      type: shaker
+    - name: Simple Syrup
+      amount: 0.5
+      type: shaker
+    - name: Lime Wheel
+      type: garnish
+  steps:
+    - "Put the gin, lime juice and simple syrup into a shaker."
+    - "Do a wet shake."
+    - "Strain without the ice into a chilled glass."
+    - "Garnish with a lime wheel."
+  youtube:
+
+
+- name: French 75
+  spirit: Gin
+  desc: >
+    A sparkling fusion of gin, lemon, and champagne — bright, bubbly, and dangerously elegant.
+    Born in the jazz age, it's a cocktail with the charm of a ballroom and the kick of artillery.
+  ingredients:
+    - name: Gin
+      amount: 1
+      type: shaker
+    - name: Lemon Juice
+      amount: 0.5
+      type: shaker
+    - name: Simple Syrup
+      amount: 0.5
+      type: shaker
+    - name: Champagne
+      amount: 3
+      type: top
+    - name: Lemon Twist
+      type: garnish
+  steps:
+    - "Put the gin, lemon juice and simple syrup into a shaker."
+    - "Do a wet shake."
+    - "Strain without the ice into a chilled glass."
+    - "Top with champagne (or other sparkling wine)."
+    - "Garnish with a lemon twist."
+  youtube:
+
+
+- name: Clover Club
+  spirit: Gin
+  desc: >
+    A pre-Prohibition gem that balances tart raspberries, gin, and silky egg white
+    into a blushing pink cocktail. It's refined yet playful — like a love letter
+    sealed with velvet and edge.
+  ingredients:
+    - name: Gin
+      amount: 1.5
+      type: shaker
+    - name: Lemon Juice
+      amount: 0.5
+      type: shaker
+    - name: Simple Syrup
+      amount: 0.5
+      type: shaker
+    - name: Raspberries
+      amount: 5
+      amountType: absolute
+      type: shaker
+    - name: Egg White
+      amount: 0.5
+      type: shaker
+    - name: Raspberries
+      type: garnish
+  steps:
+    - "Put the gin, lemon juice, simple syrup, the raspberries and egg white into a shaker."
+    - "Muddle the raspberries in the shaker."
+    - "First do a dry shake, then a wet shake."
+    - "Strain through a small sieve without the ice and raspberries into a chilled glass."
+    - "Garnish with 1-3 raspberries."
+  youtube:
+
 # - name:
 #   spirit:
 #   desc: >

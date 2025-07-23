@@ -4,96 +4,99 @@ layout: default
 
 {% assign cocktail = site.data.cocktails | where: "name", page.title | first %}
 
-<div class="container my-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-10">
-      <div class="text-center mb-5 pb-4 border-bottom">
+<div class="container my-4">
+  <div class="row">
+    <div class="col-lg-4 mb-4">
+      <div class="card shadow-sm">
+        {%- assign url = cocktail.name | downcase -%}
+        {%- assign url = url | replace: ' ', '-' -%}
+        {%- assign img = url | prepend: 'assets/cocktails/' -%}
+        {%- assign img = img | append: '.png' -%}
+        <img src="{{ img | relative_url }}" class="card-img-top" alt="{{ cocktail.name }}" style="height: 450px; object-fit: cover;">
+      </div>
+    </div>
+
+    <div class="col-lg-8 mb-4">
+      <div class="d-flex justify-content-between align-items-start">
         <h1 class="display-4">{{ cocktail.name }}</h1>
-        <p class="lead text-muted">Base Spirit: <strong class="text-dark">{{ cocktail.spirit }}</strong></p>
+        {% if cocktail.youtube %}
+        <a href="{{ cocktail.youtube }}" class="btn btn-danger" target="_blank" title="Unaffiliated video tutorial">
+          <i class="fas fa-play me-2"></i>Watch Tutorial
+        </a>
+        {%- endif -%}
       </div>
+      <p>{{ cocktail.desc }}</p>
+      <p class="lead text-muted">Base Spirit: <strong class="text-dark">{{ cocktail.spirit }}</strong></p>
 
+    </div>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-lg-12">
       <div class="row">
-        <div class="col-lg-4 mb-4">
-          <div class="card shadow-sm">
-            {%- assign url = cocktail.name | downcase -%}
-            {%- assign url = url | replace: ' ', '-' -%}
-            {%- assign img = url | prepend: 'assets/cocktails/' -%}
-            {%- assign img = img | append: '.png' -%}
-            <img src="{{ img | relative_url }}" class="card-img-top" alt="{{ cocktail.name }}" style="height: 300px; object-fit: cover;">
-            {% if cocktail.youtube %}
-            <div class="card-body text-center">
-              <a href="{{ cocktail.youtube }}" class="btn btn-danger" target="_blank" title="Unaffiliated video tutorial">
-                <i class="fas fa-play me-2"></i>Watch Tutorial
-              </a>
+        <div class="col-md-6 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-primary text-white">
+              <h3 class="card-title mb-0">
+                <i class="fas fa-mortar-pestle me-3"></i>Ingredients
+              </h3>
             </div>
-            {%- endif -%}
-          </div>
-        </div>
-
-        <div class="col-lg-12">
-          <div class="row">
-            <div class="col-md-6 mb-4">
-              <div class="card h-100 shadow-sm">
-                <div class="card-header bg-primary text-white">
-                  <h3 class="card-title mb-0">
-                    <i class="fas fa-mortar-pestle me-3"></i>Ingredients
-                  </h3>
-                </div>
-                <div class="card-body">
-                  <ul class="list-group list-group-flush">
-                    {%- for ingredient in cocktail.ingredients -%}
-                      <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-                        {%- if ingredient.type == 'garnish' -%}
-                          <span class="text-success fst-italic">
-                            <i class="fas fa-seedling me-2"></i>{{ ingredient.name }}
-                          </span>
-                          <span class="badge bg-success rounded-pill">{{ ingredient.type }}</span>
-                        {%- else -%}
-                          <span>{{ ingredient.name }}</span>
-                          <span class="badge bg-primary rounded-pill">
-                            {%- include amount.html amount=ingredient.amount %}
-                          </span>
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                {%- for ingredient in cocktail.ingredients -%}
+                  <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                    {%- if ingredient.type == 'garnish' -%}
+                      <span class="text-success fst-italic">
+                        <i class="fas fa-seedling me-2"></i>{{ ingredient.name }}
+                      </span>
+                      <span class="badge bg-success rounded-pill" style="width: 60px">{{ ingredient.type }}</span>
+                    {%- elsif ingredient.type == 'side' -%}
+                      <span class="text-info fst-italic">
+                        <i class="fas fa-gem me-2"></i>{{ ingredient.name }}
+                      </span>
+                      <span class="badge bg-info rounded-pill" style="width: 60px">{{ ingredient.type }}</span>
+                    {%- else -%}
+                      <span>{{ ingredient.name }}</span>
+                      <span>
+                        {%- assign badgeType = 'bg-danger' -%}
+                        {%- if ingredient.type == 'top' -%}
+                          {%- assign badgeType = 'bg-info' -%}
                         {%- endif -%}
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6 mb-4">
-              <div class="card h-100 shadow-sm">
-                <div class="card-header bg-success text-white">
-                  <h3 class="card-title mb-0">
-                    <i class="fas fa-list-check me-3"></i>Instructions
-                  </h3>
-                </div>
-                <div class="card-body">
-                  <ol class="list-group list-group-numbered list-group-flush">
-                    {%- for step in cocktail.steps -%}
-                      <li class="list-group-item px-0 border-0">
-                        <div class="ms-2 me-auto">
-                          {{ step }}
-                        </div>
-                      </li>
-                    {%- endfor -%}
-                  </ol>
-                </div>
-              </div>
+                        <span class="badge {{ badgeType }} rounded-pill">
+                          {{ ingredient.type }}
+                        </span>
+                        <span class="badge bg-primary rounded-pill" style="width: 60px">
+                          {%- include amount.html amount=ingredient.amount amountType=ingredient.amountType %}
+                        </span>
+                      </span>
+                    {%- endif -%}
+                  </li>
+                {% endfor %}
+              </ul>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="text-center mt-4">
-        {%- comment -%}
-        <button class="btn btn-primary btn-lg me-2" type="button">
-          <i class="fas fa-heart me-2"></i>Add to Favorites
-        </button>
-        <button class="btn btn-outline-secondary btn-lg" type="button">
-          <i class="fas fa-share me-2"></i>Share Recipe
-        </button>
-        {%- endcomment -%}
+        <div class="col-md-6 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white">
+              <h3 class="card-title mb-0">
+                <i class="fas fa-list-check me-3"></i>Instructions
+              </h3>
+            </div>
+            <div class="card-body">
+              <ol class="list-group list-group-numbered list-group-flush">
+                {%- for step in cocktail.steps -%}
+                  <li class="list-group-item px-0 border-0">
+                    <div class="ms-2 me-auto">
+                      {{ step }}
+                    </div>
+                  </li>
+                {%- endfor -%}
+              </ol>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

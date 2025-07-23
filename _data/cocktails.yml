@@ -1,18 +1,164 @@
 - name: Pisco Sour
   spirit: Pisco
+  desc: >
+    A classic South American cocktail that's both refreshing and sophisticated.
   ingredients:
     - name: Pisco
       amount: 2
+      type: shaker
     - name: Lime Juice
       amount: 1
+      type: shaker
     - name: Simple Syrup
       amount: 0.5
+      type: shaker
     - name: Egg White
       amount: 1
+      type: shaker
     - name: Angostura bitters
       type: garnish
   steps:
     - "Put the Pisco, lime juice, simple syrup and egg white into a shaker."
     - "First do a dry shake, then a wet shake."
+    - "Strain without the ice into a chilled glass."
     - "Add 3-5 Angostura bitters."
   youtube:
+
+- name: Pornstar Martini
+  spirit: Vanilla Vodka
+  desc: >
+    A bold, seductive cocktail that balances sweet passion fruit with sharp
+    vanilla vodka and a shot of prosecco on the side — indulgent, playful,
+    and unapologetically glamorous.
+  ingredients:
+    - name: Vanilla Vodka
+      amount: 1
+      type: shaker
+    - name: Passion Fruit Juice
+      amount: 1.5
+      type: shaker
+    - name: Lime Juice
+      amount: 0.2
+      type: shaker
+    - name: Egg White
+      amount: 1
+      type: shaker
+    - name: Passion Fruit
+      type: garnish
+    - name: Prosecco
+      type: side
+  steps:
+    - "Put the vodka, passion fruit juice, lime juice and egg white into a shaker."
+    - "First do a dry shake, then a wet shake."
+    - "Strain without the ice into a chilled glass."
+    - "Float half a passion fruit as garnish."
+    - "Serve with a side shot of prosecco."
+  youtube:
+
+
+- name: Gin Fizz
+  spirit: Gin
+  desc: >
+    A light, citrusy classic that blends gin, lemon juice, sugar,
+    and soda water into an effervescent, silky drink — crisp, refreshing,
+    and timeless.
+  ingredients:
+    - name: Gin
+      amount: 2
+      type: shaker
+    - name: Lime Juice
+      amount: 1
+      type: shaker
+    - name: Simple Syrup
+      amount: 0.75
+      type: shaker
+    - name: Egg White
+      amount: 0.5
+      type: shaker
+    - name: Club Soda
+      amount: 1
+      type: top
+  steps:
+    - "Put the gin, lime juice, simple syrup and egg white into a shaker."
+    - "First do a dry shake, then a wet shake."
+    - "Strain without the ice into a chilled glass."
+    - "Top with soda (or sparkling) water."
+  youtube:
+
+
+- name: South Side
+  spirit: Gin
+  desc: >
+    A refreshing Prohibition-era cocktail that blends the crispness of gin
+    with fresh mint and citrus — like a gin mojito, but smoother and more refined.
+  ingredients:
+    - name: Gin
+      amount: 2
+      type: shaker
+    - name: Lime Juice
+      amount: 1
+      type: shaker
+    - name: Simple Syrup
+      amount: 1
+      type: shaker
+    - name: Mint Leaves
+      amount: 5
+      amountType: absolute
+      type: shaker
+    - name: Mint Sprig
+      type: garnish
+  steps:
+    - "Put the gin, lime juice, simple syrup and mint leaves into a shaker."
+    - "Do a wet shake."
+    - "Strain through a small sieve without the ice and mint into a chilled glass."
+    - "Garnish with a mint sprig."
+  youtube:
+
+
+- name: White Lady
+  spirit: Gin
+  desc: >
+    A silky, citrus-forward classic that blends gin, triple sec, and lemon juice into a refined,
+    pale cocktail. Balanced, elegant, and quietly powerful — like a velvet glove with a sharp edge.
+  ingredients:
+    - name: Gin
+      amount: 2
+      type: shaker
+    - name: Triple Sec
+      amount: 0.5
+      type: shaker
+    - name: Lime Juice
+      amount: 0.5
+      type: shaker
+    - name: Egg White
+      amount: 1
+      type: shaker
+  steps:
+    - "Put the gin, triple sec, lime juice and egg white into a shaker."
+    - "First do a dry shake, then a wet shake."
+    - "Strain without the ice into a chilled glass."
+  youtube:
+
+
+# - name:
+#   spirit:
+#   desc: >
+#
+#   ingredients:
+#     - name:
+#       amount:
+#       type: shaker
+#     - name: Lime Juice
+#       amount: 1
+#       type: shaker
+#     - name: Simple Syrup
+#       amount: 0.5
+#       type: shaker
+#     - name: Egg White
+#       amount: 1
+#       type: shaker
+#     - name:
+#       type: garnish
+#   steps:
+#     - ""
+#   youtube:

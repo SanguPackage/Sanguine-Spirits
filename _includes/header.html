@@ -1,10 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg bg-light">
   <div class="container">
-    <i class="bi bi-lightning-charge-fill me-2 fs-4 text-warning"></i>
-    <span class="fw-bold">
-      <img src="{{ 'assets/img/logo-header.png' | absolute_url }}">
-    </span>
+    <a href="{{ '/' | relative_url }}">
+      <img src="{{ 'assets/img/logo-header.png' | absolute_url }}" style="max-height: 40px;">
+    </a>
 
+    <h1>Sanguine Spirits</h1>
+
+    {%- comment -%}
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,17 +14,10 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <div class="navbar-nav me-auto">
         <a class="nav-link active" href="#">Home</a>
-        <a class="nav-link" href="#">About</a>
-        <a class="nav-link" href="#">Services</a>
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" href="#">Cocktails</a>
+        <a class="nav-link" href="#">Ingredients</a>
       </div>
-
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
-        <button class="btn btn-outline-light" type="submit">
-          <i class="bi bi-search"></i>
-        </button>
-      </form>
     </div>
+    {%- endcomment -%}
   </div>
 </nav>

@@ -1,0 +1,18 @@
+- name: Pisco Sour
+  spirit: Pisco
+  ingredients:
+    - name: Pisco
+      amount: 2
+    - name: Lime Juice
+      amount: 1
+    - name: Simple Syrup
+      amount: 0.5
+    - name: Egg White
+      amount: 1
+    - name: Angostura bitters
+      type: garnish
+  steps:
+    - "Put the Pisco, lime juice, simple syrup and egg white into a shaker."
+    - "First do a dry shake, then a wet shake."
+    - "Add 3-5 Angostura bitters."
+  youtube:

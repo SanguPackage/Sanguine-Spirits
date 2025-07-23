@@ -1,0 +1,6 @@
+{%- assign amount = include.amount -%}
+{%- if amount >= 1 -%}
+{{- amount -}}
+{%- elsif amount == 0.5 -%}
+½
+{%- endif -%}

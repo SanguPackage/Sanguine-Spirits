@@ -1,0 +1,140 @@
+---
+layout: default
+---
+
+{% assign cocktail = site.data.cocktails | where: "name", page.title | first %}
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="text-center mb-5 pb-4 border-bottom">
+        <h1 class="display-4 fw-light text-primary">{{ cocktail.name }}</h1>
+        <p class="lead text-muted">Base Spirit: <strong class="text-dark">{{ cocktail.spirit }}</strong></p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-primary text-white">
+              <h3 class="card-title mb-0">
+                <i class="bi bi-list-ul me-2"></i>Ingredients
+              </h3>
+            </div>
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                {% for ingredient in cocktail.ingredients %}
+                  <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                    {% if ingredient.type == 'garnish' %}
+                      <span class="text-success fst-italic">
+                        <i class="bi bi-flower1 me-2"></i>{{ ingredient.name }}
+                      </span>
+                      <span class="badge bg-success rounded-pill">{{ ingredient.type }}</span>
+                    {% else %}
+                      <span>{{ ingredient.name }}</span>
+                      <span class="badge bg-primary rounded-pill">{{ ingredient.amount }} oz</span>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instructions Column -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white">
+              <h3 class="card-title mb-0">
+                <i class="bi bi-list-ol me-2"></i>Instructions
+              </h3>
+            </div>
+            <div class="card-body">
+              <ol class="list-group list-group-numbered list-group-flush">
+                {% for step in cocktail.steps %}
+                  <li class="list-group-item px-0 border-0">
+                    <div class="ms-2 me-auto">
+                      {{ step }}
+                    </div>
+                  </li>
+                {% endfor %}
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recipe Meta Information -->
+      <div class="card shadow-sm mt-4">
+        <div class="card-header bg-light">
+          <h4 class="card-title mb-0">
+            <i class="bi bi-info-circle me-2"></i>Recipe Details
+          </h4>
+        </div>
+        <div class="card-body">
+          <div class="row text-center">
+            <div class="col-md-4">
+              <div class="border-end">
+                <h5 class="text-primary">{{ cocktail.ingredients | size }}</h5>
+                <small class="text-muted">Total Ingredients</small>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="border-end">
+                <h5 class="text-success">{{ cocktail.steps | size }}</h5>
+                <small class="text-muted">Preparation Steps</small>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h5 class="text-info">{{ cocktail.spirit }}</h5>
+              <small class="text-muted">Base Spirit</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recipe Summary -->
+      <div class="alert alert-light mt-4" role="alert">
+        <h5 class="alert-heading">
+          <i class="bi bi-cup-straw me-2"></i>Recipe Summary
+        </h5>
+        <p class="mb-0">
+          This {{ cocktail.name }} is a {{ cocktail.spirit }}-based cocktail featuring
+          {% assign main_ingredients = cocktail.ingredients | where_exp: "ingredient", "ingredient.type != 'garnish'" %}
+          {% for ingredient in main_ingredients %}
+            {% if forloop.last and forloop.length > 1 %}
+              and <strong>{{ ingredient.name | downcase }}</strong>
+            {% elsif forloop.first %}
+              <strong>{{ ingredient.name | downcase }}</strong>
+            {% else %}
+              , <strong>{{ ingredient.name | downcase }}</strong>
+            {% endif %}
+          {% endfor %}.
+
+          {% assign garnish_ingredients = cocktail.ingredients | where: "type", "garnish" %}
+          {% if garnish_ingredients.size > 0 %}
+            Garnished with
+            {% for garnish in garnish_ingredients %}
+              {% if forloop.last and forloop.length > 1 %}
+                and <em class="text-success">{{ garnish.name | downcase }}</em>
+              {% elsif forloop.first %}
+                <em class="text-success">{{ garnish.name | downcase }}</em>
+              {% else %}
+                , <em class="text-success">{{ garnish.name | downcase }}</em>
+              {% endif %}
+            {% endfor %}.
+          {% endif %}
+        </p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="text-center mt-4">
+        <button class="btn btn-primary btn-lg me-2" type="button">
+          <i class="bi bi-heart me-2"></i>Add to Favorites
+        </button>
+        <button class="btn btn-outline-secondary btn-lg" type="button">
+          <i class="bi bi-share me-2"></i>Share Recipe
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

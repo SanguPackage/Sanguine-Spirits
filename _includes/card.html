@@ -1,0 +1,19 @@
+{%- assign cocktail = include.cocktail -%}
+<div class="card h-100 shadow-sm">
+  {%- assign url = cocktail.name | downcase -%}
+  {%- assign url = url | replace: ' ', '-' -%}
+  {%- assign img = url | prepend: 'assets/cocktails/' -%}
+  {%- assign img = img | append: '.png' -%}
+  <img src="{{ img | relative_url }}" class="card-img-top" alt="{{ cocktail.name }}">
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title">{{ cocktail.name }}</h5>
+    <p class="card-text flex-grow-1">
+      {%- for ingredient in cocktail.ingredients -%}
+        {{ ingredient.name }}
+        {%- if ingredient.amount %} ({%- include amount.html amount=ingredient.amount -%}){%- endif -%}
+        {% unless forloop.last %}, {% endunless %}
+      {%- endfor -%}
+    </p>
+    <a href="{{ url | prepend: '/cocktails/' | relative_url }}" class="btn btn-primary mt-auto">Learn More</a>
+  </div>
+</div>

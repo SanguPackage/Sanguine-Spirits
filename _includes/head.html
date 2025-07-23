@@ -5,9 +5,10 @@
   <link rel="icon" type="image/png" href="{{ 'assets/img/logo-header.png' | relative_url }}">
 
   {%- if page.title -%}
-  <title>{{ page.title }} | {{ site.title }}</title>
+  {% assign title = page.title | append: ' | ' %}
+  <title>{{ title | append: site.title }}</title>
   {%- else -%}
-  <title>{{ site.title }} | {{ site.description }}</title>
+  <title>{{ site.description }}</title>
   {%- endif -%}
   <meta property="og:type" content="website" />
   <meta property="og:title" content="{{ site.title }}">

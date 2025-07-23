@@ -40,8 +40,18 @@
     <h5 class="card-title">{{ cocktail.name }}</h5>
     <p class="card-text flex-grow-1">
       {%- for ingredient in cocktail.ingredients -%}
+        {%- if ingredient.type == 'garnish' -%}
+          <span class="text-success fst-italic">
+            <i class="fas fa-seedling me-1" title="Garnish"></i>
+        {%- elsif ingredient.type == 'side' -%}
+          <span class="text-info fst-italic">
+            <i class="fas fa-gem me-1" title="Side"></i>
+        {%- endif -%}
         {{ ingredient.name }}
         {%- if ingredient.amount %} ({%- include amount-nr.html amount=ingredient.amount amountType=ingredient.amountType -%}){%- endif -%}
+        {%- if ingredient.type == 'garnish' or ingredient.type == 'side' -%}
+          </span>
+        {%- endif -%}
         {% unless forloop.last %}, {% endunless %}
       {%- endfor -%}
     </p>

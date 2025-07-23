@@ -5,16 +5,30 @@
   <link rel="icon" type="image/png" href="{{ 'assets/img/logo-header.png' | relative_url }}">
 
   {%- if page.title -%}
-  {% assign title = page.title | append: ' | ' %}
-  <title>{{ title | append: site.title }}</title>
+    {%- assign title = page.title | append: ' | ' -%}
+    {%- assign title = title | append: site.title -%}
+    {%- assign ogTitle = title -%}
   {%- else -%}
-  <title>{{ site.description }}</title>
+    {%- assign title = site.description -%}
+    {%- assign ogTitle = site.title -%}
   {%- endif -%}
+  <title>{{ title }}</title>
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="{{ site.title }}">
-  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:title" content="{{ ogTitle }}">
   <meta property="og:url" content="{{ site.url }}">
-  <meta property="og:image" itemprop="image" content="{{ 'assets/img/logo.png' | absolute_url }}">
+
+  {%- if page.layout == 'cocktail' -%}
+    {% assign cocktail = site.data.cocktails | where: "name", page.title | first %}
+    <meta property="og:description" content="{{ cocktail.desc | strip }}">
+    {%- assign url = page.title | downcase -%}
+    {%- assign url = url | replace: ' ', '-' -%}
+    {%- assign img = url | prepend: 'assets/cocktails/' -%}
+    {%- assign img = img | append: '.png' -%}
+    <meta property="og:image" itemprop="image" content="{{ img | absolute_url }}">
+  {%- else -%}
+    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:image" itemprop="image" content="{{ 'assets/img/logo.png' | absolute_url }}">
+  {%- endif -%}
   <meta property="og:image:width" content="1024">
   <meta property="og:image:height" content="1024">
   <meta property="og:image:type" content="image/png">

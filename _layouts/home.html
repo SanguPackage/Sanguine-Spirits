@@ -12,7 +12,7 @@ layout: default
         <h1 class="display-4 fw-bold mb-3">Cocktail Recipes</h1>
         <p class="lead mb-4"></p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-          Search for cocktail recipes.
+          <select id="ingredient-filter" multiple="multiple" style="width: 100%"></select>
         </div>
       </div>
     </div>
@@ -23,7 +23,7 @@ layout: default
 <div class="container my-5">
   <div class="row g-4">
     {%- for cocktail in site.data.cocktails -%}
-    <div class="col-lg-4 col-md-6">
+    <div class="col-lg-4 col-md-6" data-cocktail="{{ cocktail.name }}">
       {%- include card.html cocktail=cocktail -%}
     </div>
     {%- endfor -%}

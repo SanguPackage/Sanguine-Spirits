@@ -1,10 +1,110 @@
-$(document).ready(function() {
-  const unit = localStorage.getItem('units');
-  if (unit) {
-    changeUnit(unit);
+let cocktails = [];
+
+function getUniqueIngredients(cocktailData) {
+  const ingredients = new Set();
+
+  cocktailData.forEach(cocktail => {
+    cocktail.ingredients.forEach(ingredient => {
+      if (ingredient.type !== 'garnish') {
+        ingredients.add(ingredient.name);
+      }
+    });
+  });
+
+  return Array.from(ingredients).sort();
+}
+
+function filterCocktails(selectedIngredients) {
+  if (selectedIngredients.length === 0) {
+    return cocktails;
   }
-  return null;
-});
+
+  return cocktails.filter(cocktail => {
+    const cocktailIngredients = cocktail.ingredients
+      .filter(ing => ing.type !== 'garnish')
+      .map(ing => ing.name);
+
+    return selectedIngredients.every(selected =>
+      cocktailIngredients.includes(selected)
+    );
+  });
+}
+
+function displayResults(filteredCocktails) {
+  const allCocktailDivs = document.querySelectorAll('[data-cocktail]');
+  const filteredNames = filteredCocktails.map(cocktail => cocktail.name);
+
+  allCocktailDivs.forEach(div => {
+    const cocktailName = div.getAttribute('data-cocktail');
+    if (filteredNames.includes(cocktailName)) {
+      div.style.display = '';
+    } else {
+      div.style.display = 'none';
+    }
+  });
+
+  const noResultsDiv = document.getElementById('no-results-message');
+  if (filteredCocktails.length === 0) {
+    if (noResultsDiv) {
+      noResultsDiv.style.display = '';
+    }
+  } else {
+    if (noResultsDiv) {
+      noResultsDiv.style.display = 'none';
+    }
+  }
+}
+
+
+async function loadCocktails() {
+  try {
+    const response = await fetch('./assets/cocktails.json');
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    cocktails = await response.json();
+    initializeSelect2();
+  } catch (error) {
+    console.error('Error loading cocktails:', error);
+  }
+}
+
+function initializeSelect2() {
+  const uniqueIngredients = getUniqueIngredients(cocktails);
+
+  const selectElement = $('#ingredient-filter');
+  uniqueIngredients.forEach(ingredient => {
+    selectElement.append(new Option(ingredient, ingredient));
+  });
+
+  selectElement.select2({
+    theme: 'classic',
+    placeholder: "Search for cocktail recipes...",
+    allowClear: true,
+    tags: true,
+    tokenSeparators: [',', ' '],
+    createTag: function (params) {
+      const term = $.trim(params.term);
+      if (term === '') {
+        return null;
+      }
+      return {
+        id: term,
+        text: term,
+        newTag: true
+      };
+    }
+  });
+
+  selectElement.on('change', function() {
+    const selectedIngredients = $(this).val() || [];
+    const filteredCocktails = filterCocktails(selectedIngredients);
+    displayResults(filteredCocktails);
+  });
+}
+
+
+
 
 
 function changeUnit(newUnit) {
@@ -78,3 +178,16 @@ function formatAmount(amount) {
     return amount.toString();
   }
 }
+
+
+
+
+
+
+$(document).ready(function() {
+  const unit = localStorage.getItem('units');
+  if (unit) {
+    changeUnit(unit);
+  }
+  loadCocktails();
+});

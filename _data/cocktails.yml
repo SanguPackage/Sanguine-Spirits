@@ -268,7 +268,7 @@
       amount: 2
       type: shaker
     - name: Triple Sec
-      amount: 0.5
+      amount: 1
       type: shaker
       spirit: true
     - name: Lime Juice

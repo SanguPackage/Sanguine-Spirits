@@ -1,4 +1,4 @@
-Sanguine-Spirits
+Sanguine Spirits
 ================
 
 _Where every sip runs deep._

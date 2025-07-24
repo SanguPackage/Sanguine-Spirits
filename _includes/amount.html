@@ -1,5 +1,5 @@
 {%- assign amount = include.amount -%}
-<span class="amount" data-amount="{{ amount }}">
+<span class="amount" data-amount="{{ amount }}" data-amountType="{{ include.amountType }}">
   {%- if include.amountType == 'absolute' -%}
     {{ amount }}
   {%- elsif include.amountType == nil -%}

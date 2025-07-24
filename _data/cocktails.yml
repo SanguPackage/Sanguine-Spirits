@@ -258,6 +258,38 @@
   youtube: https://www.youtube.com/watch?v=YjMm98w10d0
 
 
+- name: Margarita
+  spirit: Tequila
+  desc: >
+    A timeless blend of tequila, lime, and triple sec — zesty, bright, and unapologetically bold.
+    With its salted rim and sunlit tang, it walks the line between wild celebration and perfect balance.
+  ingredients:
+    - name: Tequila
+      amount: 2
+      type: shaker
+    - name: Triple Sec
+      amount: 0.5
+      type: shaker
+      spirit: true
+    - name: Lime Juice
+      amount: 1
+      type: shaker
+    - name: Simple Syrup
+      amount: 0.5
+      type: shaker
+    - name: Lime Wheel
+      type: garnish
+    - name: Salt
+      type: garnish
+  steps:
+    - "Put the tequila, triple sec, lemon juice and simple syrup into a shaker."
+    - "Do a wet shake."
+    - "Garnish the glass rim with salt."
+    - "Strain without the ice into a chilled glass."
+    - "Garnish with a lime wheel."
+
+
+
 # - name:
 #   spirit:
 #   desc: >

@@ -22,6 +22,10 @@ layout: default
 
 <div class="container my-5">
   <div class="row g-4">
+    <div id="no-results-message" style="display: none" class="alert alert-warning text-center" role="alert">
+      Oh noes we have no cocktails matching those criteria.
+    </div>
+
     {%- for cocktail in site.data.cocktails -%}
     <div class="col-lg-4 col-md-6" data-cocktail="{{ cocktail.name }}">
       {%- include card.html cocktail=cocktail -%}

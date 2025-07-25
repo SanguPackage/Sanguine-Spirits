@@ -44,15 +44,7 @@ function displayResults(filteredCocktails) {
   });
 
   const noResultsDiv = document.getElementById('no-results-message');
-  if (filteredCocktails.length === 0) {
-    if (noResultsDiv) {
-      noResultsDiv.style.display = '';
-    }
-  } else {
-    if (noResultsDiv) {
-      noResultsDiv.style.display = 'none';
-    }
-  }
+  noResultsDiv.style.display = filteredCocktails.length === 0 ? '' : 'none';
 }
 
 

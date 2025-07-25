@@ -187,5 +187,8 @@ $(document).ready(function() {
   if (unit) {
     changeUnit(unit);
   }
-  loadCocktails();
+
+  if ($('#ingredient-filter').length) {
+    loadCocktails();
+  }
 });

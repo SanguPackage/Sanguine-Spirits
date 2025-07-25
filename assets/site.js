@@ -90,9 +90,15 @@ function initializeSelect2() {
 
   selectElement.on('change', function() {
     const selectedIngredients = $(this).val() || [];
+    localStorage.setItem('filters', JSON.stringify(selectedIngredients));
     const filteredCocktails = filterCocktails(selectedIngredients);
     displayResults(filteredCocktails);
   });
+
+  const defaultSelectedOptions = localStorage.getItem('filters');
+  if (defaultSelectedOptions) {
+    selectElement.val(JSON.parse(defaultSelectedOptions)).trigger('change');
+  }
 }
 
 

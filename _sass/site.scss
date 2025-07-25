@@ -32,3 +32,274 @@ nav {
     color: black !important;
   }
 }
+
+.select2-selection--multiple {
+  min-height: 46px !important;
+  border: 2px solid #d1d5db !important;
+  border-radius: 12px !important;
+  background: #ffffff !important;
+  padding: 4px 8px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.2s ease !important;
+
+  .select2-search--inline {
+    line-height: 13px;
+  }
+}
+
+.select2-selection--multiple:hover {
+  border-color: #9ca3af !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05) !important;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+  outline: none !important;
+}
+
+/* Selected items (tags) */
+.select2-selection__choice {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  color: white !important;
+  padding: 6px 12px !important;
+  margin: 2px 4px 2px 0 !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2) !important;
+  transition: all 0.2s ease !important;
+}
+
+.select2-selection__choice:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Remove button on tags */
+.select2-selection__choice__remove {
+  color: rgba(255, 255, 255, 0.8) !important;
+  margin-right: 8px !important;
+  font-weight: bold !important;
+  transition: color 0.2s ease !important;
+}
+
+.select2-selection__choice__remove:hover {
+  color: white !important;
+  background: none !important;
+}
+
+/* Search input */
+.select2-search__field {
+  border: none !important;
+  outline: none !important;
+  font-size: 0.95rem !important;
+  color: #374151 !important;
+  padding: 4px 0 !important;
+  min-width: 120px !important;
+}
+
+.select2-search__field::placeholder {
+  color: #9ca3af !important;
+  font-style: italic !important;
+}
+
+/* Dropdown */
+.select2-dropdown {
+  border: 2px solid #e5e7eb !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+  margin-top: 4px !important;
+  overflow: hidden !important;
+}
+
+.select2-dropdown--above {
+  margin-top: -4px !important;
+  margin-bottom: 4px !important;
+}
+
+/* Search box in dropdown */
+.select2-search--dropdown {
+  padding: 12px !important;
+  background: #f9fafb !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+.select2-search--dropdown .select2-search__field {
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  background: white !important;
+  width: 100% !important;
+  font-size: 0.9rem !important;
+}
+
+/* Dropdown options */
+.select2-results__options {
+  max-height: 250px !important;
+  background: white !important;
+}
+
+.select2-results__option {
+  padding: 12px 16px !important;
+  font-size: 0.95rem !important;
+  color: #374151 !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  border-left: 3px solid transparent !important;
+}
+
+.select2-results__option:hover,
+.select2-results__option--highlighted {
+  background: linear-gradient(90deg, #eff6ff, #dbeafe) !important;
+  color: #1e40af !important;
+  border-left-color: #3b82f6 !important;
+}
+
+.select2-results__option--selected {
+  background: #f0f9ff !important;
+  color: #1e40af !important;
+  font-weight: 500 !important;
+  border-left-color: #3b82f6 !important;
+}
+
+.select2-results__option--selected:hover {
+  background: #e0f2fe !important;
+}
+
+/* No results message */
+.select2-results__message {
+  padding: 16px !important;
+  color: #6b7280 !important;
+  font-style: italic !important;
+  text-align: center !important;
+  background: #f9fafb !important;
+}
+
+/* Clear button */
+.select2-selection__clear {
+  color: #6b7280 !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  margin-right: 8px !important;
+  padding: 4px !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+}
+
+.select2-selection__clear:hover {
+  color: #dc2626 !important;
+  background: #fee2e2 !important;
+}
+
+/* Arrow */
+.select2-selection__arrow {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  right: 12px !important;
+}
+
+.select2-selection__arrow b {
+  border-color: #6b7280 transparent transparent transparent !important;
+  border-width: 6px 5px 0 5px !important;
+  transition: transform 0.2s ease !important;
+}
+
+.select2-container--open .select2-selection__arrow b {
+  transform: rotate(180deg) !important;
+  border-color: #3b82f6 transparent transparent transparent !important;
+}
+
+/* Loading indicator */
+.select2-container--default .select2-selection--multiple .select2-selection__rendered .select2-search--inline .select2-search__field {
+  margin-top: 4px !important;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .cocktail-filter-container {
+    margin: 1rem;
+    padding: 0;
+  }
+
+  .select2-selection--multiple {
+    min-height: 44px !important;
+    padding: 2px 6px !important;
+  }
+
+  .select2-selection__choice {
+    padding: 4px 8px !important;
+    font-size: 0.8rem !important;
+    margin: 1px 2px 1px 0 !important;
+  }
+
+  .select2-dropdown {
+    margin-top: 2px !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .filter-label {
+    color: #f3f4f6;
+  }
+
+  .select2-selection--multiple {
+    background: #1f2937 !important;
+    border-color: #374151 !important;
+    color: #f3f4f6 !important;
+  }
+
+  .select2-search__field {
+    color: #f3f4f6 !important;
+    background: transparent !important;
+  }
+
+  .select2-dropdown {
+    background: #1f2937 !important;
+    border-color: #374151 !important;
+  }
+
+  .select2-results__option {
+    color: #f3f4f6 !important;
+    background: #1f2937 !important;
+  }
+
+  .select2-results__option:hover {
+    background: #374151 !important;
+    color: #60a5fa !important;
+  }
+}
+
+/* Custom animations */
+.select2-container {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.select2-dropdown {
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -55,7 +55,6 @@ function initializeSelect2() {
   selectElement.on('change', function() {
     const selectedIngredients = $(this).val() || [];
     localStorage.setItem('filters', JSON.stringify(selectedIngredients));
-    debugger;
     const filteredCocktails = filterCocktails(selectedIngredients);
     displayResults(filteredCocktails);
   });
@@ -70,7 +69,7 @@ function initializeSelect2() {
 
 function filterCocktails(selectedIngredients) {
   if (selectedIngredients.length === 0) {
-    return cocktails;
+    return search.cocktails;
   }
 
   // return cocktails.filter(cocktail => {

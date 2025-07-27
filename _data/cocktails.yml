@@ -18,7 +18,7 @@
     - name: Angostura bitters
       type: garnish
   steps:
-    - "Put the Pisco, lime juice, simple syrup and egg white into a shaker."
+    - "Put the pisco, lime juice, simple syrup and egg white into a shaker."
     - "First do a dry shake, then a wet shake."
     - "Strain without the ice into a chilled glass."
     - "Add 3-5 Angostura bitters."
@@ -46,6 +46,7 @@
     - name: Passion Fruit
       type: garnish
     - name: Prosecco
+      spirit: true
       type: side
   steps:
     - "Put the vodka, passion fruit juice, lime juice and egg white into a shaker."

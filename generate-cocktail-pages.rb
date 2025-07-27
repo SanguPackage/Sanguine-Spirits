@@ -22,6 +22,8 @@ end
 puts "Found cocktails data in: #{data_file}"
 puts "Number of cocktails: #{cocktails.length}"
 
+generated_count = 0
+
 # Generate HTML files for each cocktail
 cocktails.each do |cocktail|
   cocktail_name = cocktail['name']
@@ -49,8 +51,10 @@ cocktails.each do |cocktail|
   else
     File.write(filepath, content)
     puts "Generated: #{filepath}"
+    generated_count += 1
   end
 end
 
-puts "\nDone! Generated #{cocktails.length} cocktail pages in the /cocktails directory."
+puts "\nDone! Generated #{generated_count} cocktail pages in the /cocktails directory."
 puts "Don't forget to commit these files to your repository."
+puts "Or use the git pre-commit hook (see README)"

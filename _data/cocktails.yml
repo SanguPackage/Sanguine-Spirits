@@ -289,6 +289,26 @@
     - "Garnish with a lime wheel."
 
 
+- name: White Russian
+  spirit: Vodka
+  desc: >
+    Smooth, indulgent, and quietly intoxicating — vodka, coffee liqueur, and cream swirl into
+    a drink that feels like silk and tastes like rebellion. Decadent, noir, and forever iconic.
+  ingredients:
+    - name: Vodka
+      amount: 2
+      type: glass
+    - name: Kahlúa
+      amount: 1
+      type: glass
+    - name: Heavy Cream
+      amount: 1
+      type: top
+  steps:
+    - "Add the vodka and kahlúa to a glass filled with ice."
+    - "Top with heavy cream and stir."
+
+
 
 # - name:
 #   spirit:

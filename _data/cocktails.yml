@@ -310,6 +310,34 @@
     - "Top with heavy cream and stir."
 
 
+- name: Espresso Martini
+  spirit: Vodka
+  desc: >
+    Bold and sophisticated, the Espresso Martini is where rich coffee meets crisp vodka — an
+    after-dark pick-me-up with a velvety kick. It's sleek, stimulating, and effortlessly cool.
+  ingredients:
+    - name: Vodka
+      amount: 2
+      type: shaker
+    - name: Kahlúa
+      spirit: true
+      amount: 0.5
+      type: shaker
+    - name: Espresso
+      amount: 1
+      type: shaker
+    - name: Simple Syrup
+      amount: 0.25
+      type: shaker
+    - name: Coffee Beans
+      amount: 3
+      amountType: absolute
+      type: garnish
+  steps:
+    - "Put the vodka, kahlúa, espresso and simple syrup into a shaker."
+    - "Do a wet shake."
+    - "Garnish with 3 coffee beans."
+
 
 # - name:
 #   spirit:

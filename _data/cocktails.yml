@@ -299,6 +299,7 @@
       amount: 2
       type: glass
     - name: Kahlúa
+      spirit: true
       amount: 1
       type: glass
     - name: Heavy Cream

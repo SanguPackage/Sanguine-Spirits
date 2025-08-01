@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container">
-    <a href="{{ '/' | relative_url }}">
+    <a href="{{ '/' | relative_url }}" style="margin-right: 30px">
       <img src="{{ 'assets/img/logo-header.png' | absolute_url }}" style="max-height: 40px;">
     </a>
 
@@ -19,5 +19,11 @@
       </div>
     </div>
     {%- endcomment -%}
+
+    <div class="ms-auto">
+      <a href="{{ site.github }}" target="_blank" rel="noopener noreferrer" class="github-link">
+        <i class="fab fa-github fa-lg fa-2x"></i>
+      </a>
+    </div>
   </div>
 </nav>

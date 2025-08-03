@@ -11,7 +11,7 @@ theme: minima
 plugins:
   - jekyll-feed
 
-google_analytics:
+google_analytics: UA-30075487-3
 github: https://github.com/SanguPackage/Sanguine-Spirits
 
 

@@ -340,6 +340,34 @@
     - "Garnish with 3 coffee beans."
 
 
+
+- name: Whiskey Sour
+  spirit: Whiskey
+  desc: >
+    A true classic of the cocktail canon — bold whiskey smoothed with bright lemon and a touch of sweetness.
+    Balanced, timeless, and just the right mix of fire and finesse.
+  ingredients:
+    - name: Whiskey
+      amount: 2
+      type: shaker
+    - name: Lime Juice
+      amount: 1
+      type: shaker
+    - name: Simple Syrup
+      amount: 0.5
+      type: shaker
+    - name: Egg White
+      amount: 1
+      type: shaker
+    - name: Angostura bitters
+      type: garnish
+  steps:
+    - "Put the whiskey, lime juice, simple syrup and egg white into a shaker."
+    - "First do a dry shake, then a wet shake."
+    - "Strain without the ice into a chilled glass."
+    - "Add 3-5 Angostura bitters."
+
+
 # - name:
 #   spirit:
 #   desc: >

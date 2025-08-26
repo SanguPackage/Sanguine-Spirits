@@ -19,10 +19,20 @@ layout: default
     <div class="col-lg-8 mb-4">
       <div class="d-flex justify-content-between align-items-start">
         <h1 class="display-4">{{ cocktail.name }}</h1>
-        {% if cocktail.youtube %}
-        <a href="{{ cocktail.youtube }}" class="btn btn-danger" target="_blank" title="Unaffiliated video tutorial">
-          <i class="fas fa-play me-2"></i>Watch Tutorial
-        </a>
+        {%- if cocktail.youtube -%}
+          {%- if cocktail.youtube contains "https://" -%}
+            <a href="{{ cocktail.youtube }}" class="btn btn-danger" target="_blank" title="Unaffiliated video tutorial">
+              <i class="fas fa-play me-2"></i>Watch Tutorial
+            </a>
+          {%- else -%}
+            <div>
+            {%- for youtube in cocktail.youtube -%}
+              <a href="{{ youtube.link }}" class="btn btn-danger" target="_blank" title="Unaffiliated video tutorial" style="display: block; margin-bottom: 6px">
+                <i class="fas fa-play me-2"></i> {{ youtube.desc }}
+              </a>
+            {%- endfor -%}
+            </div>
+          {%- endif -%}
         {%- endif -%}
       </div>
       <p>{{ cocktail.desc }}</p>

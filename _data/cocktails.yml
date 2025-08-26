@@ -368,6 +368,57 @@
     - "Add 3-5 Angostura bitters."
 
 
+
+- name: Mojito
+  spirit: Rum
+  desc: >
+    A Cuban classic — cool, vibrant, and effortlessly refreshing. Fresh mint, lime, rum, sugar, and soda water
+    come together in a sparkling balance of sweetness and zest, the very taste of laid-back elegance.
+  ingredients:
+    - name: Rum
+      amount: 2
+      type: glass
+    # - name: Lime Juice
+    #   amount: 1
+    #   type: glass
+    # - name: Simple Syrup
+    #   amount: 0.5
+    #   type: glass
+    - name: Lime
+      amount: 1
+      amountType: absolute
+      type: glass
+    - name: Mint Leaves
+      amount: 8
+      amountType: absolute
+      type: glass
+    - name: Sugar
+      amount: 1
+      amountType: tsp
+      type: glass
+    - name: Soda Water
+      type: top
+    - name: Mint Sprig
+      type: garnish
+    - name: Lime Wedge
+      type: garnish
+  steps:
+    - "Trim the ends of the lime, halve it and cut into four pieces (see video)."
+    - "Put 4 pieces into a sturdy highball glass."
+    - "Add 8-10 (small) mint leaves."
+    - "Add 1 table spoon of sugar."
+    - "Gently muddle (don't shred the mint)."
+    - "Add crushed ice, almost to the top of the glass."
+    - "Top with soda (or sparkling) water."
+    - "Stir with a spoon to mix the ingredients."
+    - "Top up with ice and garnish."
+  youtube:
+    - link: https://www.youtube.com/watch?v=KWU9ZaWbeuQ
+      desc: "Tutorial"
+    - link: https://www.youtube.com/watch?v=KMypSCazyRw
+      desc: "Two ways"
+
+
 # - name:
 #   spirit:
 #   desc: >

@@ -42,7 +42,7 @@ function changeUnit(newUnit) {
     const amountType = element.getAttribute('data-amountType');
 
     if (amountType === 'absolute') {
-      element.textContent = newValue;
+      element.textContent = formatAmount(newValue);
     } else if (!!amountType) {
       element.textContent = newValue + ' ' + amountType;
     } else {

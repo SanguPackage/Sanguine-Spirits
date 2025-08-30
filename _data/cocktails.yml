@@ -377,16 +377,10 @@
     come together in a sparkling balance of sweetness and zest, the very taste of laid-back elegance.
   ingredients:
     - name: Rum
-      amount: 2
+      amount: 1.5
       type: glass
-    # - name: Lime Juice
-    #   amount: 1
-    #   type: glass
-    # - name: Simple Syrup
-    #   amount: 0.5
-    #   type: glass
     - name: Lime
-      amount: 1
+      amount: 0.5
       amountType: absolute
       type: glass
     - name: Mint Leaves
@@ -398,6 +392,7 @@
       amountType: tsp
       type: glass
     - name: Soda Water
+      amount: 3
       type: top
     - name: Mint Sprig
       type: garnish

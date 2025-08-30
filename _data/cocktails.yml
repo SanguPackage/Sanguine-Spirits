@@ -420,6 +420,39 @@
       desc: "Two ways"
 
 
+- name: California Lemonade
+  spirit: Whiskey
+  desc: >
+    A refreshing West Coast classic — tart, fruity, and a little decadent.
+    Sunshine in a glass with a playful kick.
+  ingredients:
+    - name: Whiskey
+      amount: 2
+      type: shaker
+    - name: Lime Juice
+      amount: 1
+      type: shaker
+    - name: Lemon Juice
+      amount: 1
+      type: shaker
+    - name: Sugar
+      amount: 1
+      amountType: tsp
+      type: glass
+    - name: Soda Water
+      amount: 3
+      type: top
+    - name: Orange Wedge
+      type: garnish
+  steps:
+    - "Put the whiskey, lime & lemon juice into a shaker."
+    - "Do a wet shake."
+    - "Strain into a highball glass filled with ice."
+    - "Top with soda (or sparkling) water."
+    - "Add a tablespoon of sugar and stir."
+    - "Garnish with an orange wedge."
+
+
 # - name:
 #   spirit:
 #   desc: >

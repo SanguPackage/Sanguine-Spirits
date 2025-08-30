@@ -430,6 +430,9 @@
     - name: Lemon Juice
       amount: 1
       type: shaker
+    - name: Simple Syrup
+      amount: 0.5
+      type: shaker
     - name: Sugar
       amount: 1
       amountType: tsp
@@ -440,12 +443,38 @@
     - name: Orange Wedge
       type: garnish
   steps:
-    - "Put the whiskey, lime & lemon juice into a shaker."
+    - "Put the whiskey, lime & lemon juice and simple syrup into a shaker."
     - "Do a wet shake."
     - "Strain into a highball glass filled with ice."
     - "Top with soda (or sparkling) water."
-    - "Add a tablespoon of sugar and stir."
+    - "Add a teaspoon of sugar and stir."
     - "Garnish with an orange wedge."
+
+
+- name: Limoncello Shakerato
+  spirit: Limoncello
+  desc: >
+    A vibrant twist on the classic shakerato. Sweet, citrusy, and boldly caffeinated,
+    it's Italian sunshine with an after-dark edge.
+  ingredients:
+    - name: Limoncello
+      amount: 1
+      type: shaker
+    - name: Vodka
+      amount: 1
+      spirit: true
+      type: shaker
+    - name: Agave Syrup
+      amount: 0.5
+      type: shaker
+    - name: Espresso
+      amount: 2
+      type: shaker
+  steps:
+    - "Put the limoncello, vodka, agave (or simple) syrup and espresso into a shaker."
+    - "Do a wet shake."
+    - "Strain into a chilled glass."
+
 
 
 # - name:

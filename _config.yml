@@ -20,3 +20,5 @@ exclude:
   - LICENSE
   - pre-commit
   - README.md
+  - Gemfile
+  - Gemfile.lock

@@ -12,7 +12,7 @@ layout: default
         {%- assign url = url | replace: ' ', '-' -%}
         {%- assign img = url | prepend: 'assets/cocktails/' -%}
         {%- assign img = img | append: '.png' -%}
-        <img src="{{ img | relative_url }}" class="card-img-top" alt="{{ cocktail.name }}" style="height: 450px; object-fit: cover;">
+        <img src="{{ img | relative_url }}" class="card-img-top" alt="{{ cocktail.name }}" style="width: 100%; aspect-ratio: 1 / 1; object-fit: contain;">
       </div>
     </div>
 

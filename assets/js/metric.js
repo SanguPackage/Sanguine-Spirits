@@ -3,8 +3,30 @@ $(document).ready(function() {
   if (unit) {
     changeUnit(unit);
   }
+
+  const servings = localStorage.getItem('servings') || '1';
+  changeServings(parseInt(servings));
 });
 
+
+function changeServings(servingCount) {
+  console.log('setting servings ' + servingCount);
+  localStorage.setItem('servings', servingCount.toString());
+
+  const selectedServings = document.getElementById('selectedServings');
+  if (selectedServings) {
+    selectedServings.textContent = servingCount;
+  }
+
+  document.querySelectorAll('.servingsOption').forEach(element => {
+    element.className = 'dropdown-item servingsOption';
+    if (parseInt(element.getAttribute('data-servings')) === servingCount) {
+      element.className += ' bg-info';
+    }
+  });
+
+  updateAmounts();
+}
 
 function changeUnit(newUnit) {
   console.log('setting unit ' + newUnit);
@@ -36,9 +58,17 @@ function changeUnit(newUnit) {
     }
   });
 
+  updateAmounts();
+}
+
+function updateAmounts() {
+  const newUnit = localStorage.getItem('units') || 'Metric';
+  const servings = parseInt(localStorage.getItem('servings') || '1');
+
   const unitValues = document.querySelectorAll('.amount');
   unitValues.forEach(element => {
-    const newValue = +element.getAttribute('data-amount');
+    const baseAmount = +element.getAttribute('data-amount');
+    const newValue = baseAmount * servings;
     const amountType = element.getAttribute('data-amountType');
 
     if (amountType === 'absolute') {

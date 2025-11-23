@@ -50,15 +50,32 @@ layout: default
               <h3 class="card-title mb-0">
                 <i class="fas fa-mortar-pestle me-3"></i>Ingredients
               </h3>
-              <div class="dropdown">
-                <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="unitDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fas fa-ruler me-2" id="selectedUnit"></i>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="unitDropdown">
-                  <li><a class="dropdown-item selectedUnit" data-unit="Metric" href="javascript:void(0)" onclick="changeUnit('Metric')"><i class="fas fa-ruler me-2"></i>Metric</a></li>
-                  <li><a class="dropdown-item selectedUnit" data-unit="Imperial" href="javascript:void(0)" onclick="changeUnit('Imperial')"><i class="fas fa-balance-scale me-2"></i>Imperial</a></li>
-                  <li><a class="dropdown-item selectedUnit" data-unit="Parts" href="javascript:void(0)" onclick="changeUnit('Parts')"><i class="fas fa-divide me-2"></i>Parts</a></li>
-                </ul>
+              <div class="d-flex gap-2">
+                <div class="dropdown">
+                  <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="servingsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-users me-2"></i><span id="selectedServings">1</span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="servingsDropdown">
+                    <li><a class="dropdown-item servingsOption" data-servings="1" href="javascript:void(0)" onclick="changeServings(1)">1 Serving</a></li>
+                    <li><a class="dropdown-item servingsOption" data-servings="2" href="javascript:void(0)" onclick="changeServings(2)">2 Servings</a></li>
+                    <li><a class="dropdown-item servingsOption" data-servings="3" href="javascript:void(0)" onclick="changeServings(3)">3 Servings</a></li>
+                    <li><a class="dropdown-item servingsOption" data-servings="4" href="javascript:void(0)" onclick="changeServings(4)">4 Servings</a></li>
+                    <li><a class="dropdown-item servingsOption" data-servings="5" href="javascript:void(0)" onclick="changeServings(5)">5 Servings</a></li>
+                    <li><a class="dropdown-item servingsOption" data-servings="6" href="javascript:void(0)" onclick="changeServings(6)">6 Servings</a></li>
+                    <li><a class="dropdown-item servingsOption" data-servings="8" href="javascript:void(0)" onclick="changeServings(8)">8 Servings</a></li>
+                    <li><a class="dropdown-item servingsOption" data-servings="10" href="javascript:void(0)" onclick="changeServings(10)">10 Servings</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown">
+                  <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="unitDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-ruler me-2" id="selectedUnit"></i>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="unitDropdown">
+                    <li><a class="dropdown-item selectedUnit" data-unit="Metric" href="javascript:void(0)" onclick="changeUnit('Metric')"><i class="fas fa-ruler me-2"></i>Metric</a></li>
+                    <li><a class="dropdown-item selectedUnit" data-unit="Imperial" href="javascript:void(0)" onclick="changeUnit('Imperial')"><i class="fas fa-balance-scale me-2"></i>Imperial</a></li>
+                    <li><a class="dropdown-item selectedUnit" data-unit="Parts" href="javascript:void(0)" onclick="changeUnit('Parts')"><i class="fas fa-divide me-2"></i>Parts</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div class="card-body">

@@ -521,10 +521,10 @@
   ingredients:
     - name: Vodka
       amount: 2
-      type: shaker
+      type: glass
     - name: Lime Juice
       amount: 0.5
-      type: shaker
+      type: glass
     - name: Ginger Beer
       amount: 3
       type: top

@@ -513,6 +513,31 @@
     - "Strain into a glass over fresh ice."
     - "Garnish with a cucumber slice, a candied ginger and a pinch of chile powder."
 
+- name: Moscow Mule
+  spirit: Vodka
+  desc: >
+    The original mule — crisp vodka, fresh lime and spicy ginger beer served
+    over ice in a frosty copper mug. Simple, sharp and endlessly refreshing.
+  ingredients:
+    - name: Vodka
+      amount: 2
+      type: shaker
+    - name: Lime Juice
+      amount: 0.5
+      type: shaker
+    - name: Ginger Beer
+      amount: 3
+      type: top
+    - name: Lime Wedge
+      type: garnish
+    - name: Mint Sprig
+      type: garnish
+  steps:
+    - "Fill a copper mug with ice."
+    - "Add the vodka and lime juice."
+    - "Top with ginger beer and stir gently."
+    - "Garnish with a lime wedge and a mint sprig."
+
 
 
 # - name:
